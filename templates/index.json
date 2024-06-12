@@ -1,0 +1,89 @@
+{
+  "sections": {
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "top_main_W7WULf": {
+      "type": "top-main",
+      "blocks": {
+        "banner_top01_mYhxbc": {
+          "type": "banner-top01",
+          "settings": {
+            "image_banner_pc": "shopify:\/\/shop_images\/mv-banner01.jpg",
+            "image_banner_sp": "shopify:\/\/shop_images\/mv-banner01_sp.jpg",
+            "link_banner": "shopify:\/\/collections"
+          }
+        },
+        "banner_top01_XHHpJR": {
+          "type": "banner-top01",
+          "settings": {
+            "image_banner_pc": "shopify:\/\/shop_images\/mv-banner01.jpg",
+            "image_banner_sp": "shopify:\/\/shop_images\/mv-banner01_sp.jpg",
+            "link_banner": "shopify:\/\/collections"
+          }
+        },
+        "banner_top01_qTEM34": {
+          "type": "banner-top01",
+          "settings": {
+            "image_banner_pc": "shopify:\/\/shop_images\/mv-banner01.jpg",
+            "image_banner_sp": "shopify:\/\/shop_images\/mv-banner01_sp.jpg",
+            "link_banner": "shopify:\/\/collections"
+          }
+        },
+        "banner_top02_xftagm": {
+          "type": "banner-top02",
+          "settings": {
+            "image_banner02": "shopify:\/\/shop_images\/top-banner01.jpg",
+            "link_banner02": "shopify:\/\/collections"
+          }
+        },
+        "banner_top02_eb8dee": {
+          "type": "banner-top02",
+          "settings": {
+            "image_banner02": "shopify:\/\/shop_images\/top-banner02.jpg",
+            "link_banner02": "shopify:\/\/collections"
+          }
+        }
+      },
+      "block_order": [
+        "banner_top01_mYhxbc",
+        "banner_top01_XHHpJR",
+        "banner_top01_qTEM34",
+        "banner_top02_xftagm",
+        "banner_top02_eb8dee"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "featured_collection",
+    "top_main_W7WULf"
+  ]
+}

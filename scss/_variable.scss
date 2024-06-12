@@ -1,0 +1,77 @@
+// 変数の設定
+$main-txt:#3F3B3A !default;
+$sub-color01:#1B8F3B;
+$sub-color02:#2CB583;
+$sub-color03: #12963B;
+$gradient01: linear-gradient(270deg, rgba(18,150,59,1) 0%, rgba(44,181,131,1) 100%);
+
+$font-noto: 'Noto Sans JP', sans-serif;
+$font-mon: "Montserrat", sans-serif;
+
+$shadow01: 0 0 15px rgba(#000 , .15);
+$shadow02: 5px 5px 30px rgba(#000 , .25);
+$shadow03: 0 4px 20px rgba(#000 , .20);
+$shadow04: 3px 3px 10px rgba(#000 , .10);
+
+
+//vwを自動計算
+$base-viewport: 1440;
+@function pxtovw($size-in-px) {
+  @return ($size-in-px / $base-viewport) * 100vw;
+}
+$base-viewport_sp: 375;
+@function pxtovw_sp($size-in-px) {
+  @return ($size-in-px / $base-viewport_sp) * 100vw;
+}
+
+// $shadow01: drop-shadow(20px 20px 30px rgba($color: #3B0E01, $alpha: .15));
+// $shadow02: drop-shadow(0px 0px 20px rgba($color: #3B0E01, $alpha: .81));
+// $shadow03: drop-shadow(0px 0px 6px rgba($color: #3B0E01, $alpha: .3));
+
+// 彩度を上げる color: saturate($base-color, 15%);
+// 彩度を下げる color: desaturate($base-color, 15%);
+// 輝度を上げる color: lighten($base-color, 15%);
+// 輝度を下げる color: darken($base-color, 15%);
+// rgbaで透明度を変える color: rgba($base-color, 0.8);
+// 色の反転 color: invert($base-color);
+// グレースケール color: grayscale($base-color);
+
+// googleフォント日本語
+// @import url('https://fonts.googleapis.com/css?family=Kosugi|Kosugi+Maru|M+PLUS+1p|M+PLUS+Rounded+1c|Noto+Sans+JP|Noto+Sans+SC|Noto+Sans+TC|Noto+Serif+JP|Noto+Serif+SC|Noto+Serif+TC|Sawarabi+Gothic');
+
+// font-family: 'Noto Sans JP', sans-serif;
+// font-family: 'Noto Sans TC', sans-serif;
+// font-family: 'M PLUS 1p', sans-serif;
+// font-family: 'Noto Sans SC', sans-serif;
+// font-family: 'Noto Serif TC', serif;
+// font-family: 'Noto Serif SC', serif;
+// font-family: 'Sawarabi Gothic', sans-serif;
+// font-family: 'Noto Serif JP', serif;
+// font-family: 'M PLUS Rounded 1c', sans-serif;
+// font-family: 'Kosugi Maru', sans-serif;
+// font-family: 'Kosugi', sans-serif;
+
+// Font Awesome
+// xxx:before {
+// display: none;
+// font-family: "Font Awesome 5 Regular";
+// content: "\f1ea";
+// margin-right: 10px;
+// }
+
+// awesome5のフリー
+// &:after {
+// font-family: "Font Awesome 5 Free";
+// content: "\f105";
+// font-weight:900;
+// }
+
+
+// https://fontawesome.com/icons
+// 幅を揃える .fa-fw
+// サイズ fa-xs fa-sm fa-lg fa-2x fa-3x fa-4x fa-5x fa-6x fa-7x fa-8x fa-9x fa-10x
+// ボーダーで囲う fa-border
+// 回転 fa-rotate-90
+// 反転 fa-flip-horizontal fa-flip-vertical
+// 回す fa-spin
+// 左寄せ右寄せ fa-pull-right fa-pull-left

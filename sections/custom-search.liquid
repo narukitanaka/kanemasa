@@ -1,0 +1,66 @@
+<div class="p-itemlist_wrap02">
+  <div class="inner">
+    {% assign search_query = request.query.q | default: '' %}
+    {% assign collection_handle = request.query.collection | default: 'all' %}
+    {% assign search_query_downcase = search_query | downcase %}
+    {% assign has_products = false %}
+
+    <div class="item-list flex">
+
+      <!-- デバッグ: 検索クエリとコレクションハンドルの表示 -->
+      <p>検索クエリ: {{ search_query }}</p>
+      <p>コレクション: {{ collection_handle }}</p>
+
+      {% if collection_handle != 'all' %}
+        {% assign products = collections[collection_handle].products %}
+      {% else %}
+        {% assign products = collections.all.products %}
+      {% endif %}
+
+      {% for product in products %}
+        {% assign product_title_downcase = product.title | downcase %}
+        {% if search_query == '' or product_title_downcase contains search_query_downcase %}
+          {% assign has_products = true %}
+
+          <div class="item-card fadeIn">
+            <a class="h-scale" href="{{ product.url }}">
+              <div class="img-box"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
+              <p class="cate">
+                {% for collection in product.collections %}
+                  {{ collection.title }}
+                {% endfor %}
+              </p>
+              <p class="name">{{ product.title }}</p>
+              <p class="price">{{ product.price | money }}円(税込)</p>
+            </a>
+            <div class="add-cart">
+              <form action="/cart/add" method="post">
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit">カートに入れる</button>
+              </form>
+            </div>
+          </div><!-- /.item-card -->
+        {% endif %}
+      {% endfor %}
+
+    </div>
+
+    {% unless has_products %}
+      <p class="unless-has">該当する商品がありません。</p>
+    {% endunless %}
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "custom-search-itemlist",
+    "presets": [
+      {
+        "name": "custom-search-itemlist"
+      }
+    ]
+  }
+{% endschema %}

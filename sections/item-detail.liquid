@@ -1,0 +1,97 @@
+<section class="p-under p-item-detail_wrap detail-top">
+  <div class="inner">
+
+    <div class="item-content">
+
+      <div class="img-content">
+        <div class="img-wrapper">
+          <div class="swiper-item">
+            <div class="swiper-wrapper">
+
+            {% for image in product.images %}
+              <div class="swiper-slide">
+                <div class="img-wrap">
+                  <img src="{{ image.src | img_url: 'master' }}" alt="">
+                </div>
+              </div>
+            {%- endfor -%}
+
+            </div><!-- /.swiper-wrapper -->
+          </div><!-- /.swiper03 -->
+          <div class="thumb-list">
+
+            {% for image in product.images %}
+              <div class="thumb-item">
+                <a class="thumb-link" href="javascript:void(0);" onclick="thumbnail({{ forloop.index }})">
+                  <img src="{{ image.src | img_url: 'master' }}" alt="">
+                </a>
+              </div>
+            {%- endfor -%}
+
+          </div><!-- /.thumb-list -->
+        </div><!-- /.img-wrapper -->
+      </div><!-- /.img-content -->
+
+      <div class="detail-content">
+        <p class="cate">
+          {% for collection in product.collections %}
+            {% assign excluded_collections = 'all,tax' | split: ',' %}
+            {% unless excluded_collections contains collection.handle %}
+              {{ collection.title }}
+            {% endunless %}
+          {% endfor %}
+        </p>
+        <p class="name">{{ product.title }}</p>
+
+        {% comment %} <p class="price">¥00000 <span>(税込)</span></p> {% endcomment %}
+
+        {% if product.compare_at_price_max and product.compare_at_price_max > product.price %}
+          <p class="price">¥{{ product.compare_at_price_max | money_with_currency }}<span>（税込）</span></p>
+          <p class="price" style="color: #f00;">割引価格：¥{{ product.price | money_with_currency }}<span>（税込）</span></p>
+        {% else %}
+          <p class="price">¥{{ product.price | money_with_currency }}<span>（税込）</span></p>
+          </p>
+        {% endif %}
+
+        <p class="body-txt">
+          <span>【商品説明】</span><br>
+          {{ product.content | strip_html | newline_to_br }}
+        </p>
+        <div class="item-count">
+          <form method="post" action="/cart/add" id="AddToCartForm">
+            <input
+            type="hidden"
+            name="id"
+            value="{{ product.variants[0].id }}" />
+            <div class="product-quantity_wrapper">
+              <div class="product-quantity">
+                <button type="button" id="minus" class="minus">ー</button>
+                <input type="number" id="quantity" name="quantity" min="1" value="1">
+                <button type="button" id="plus" class="plus">＋</button>
+              </div>
+            </div>
+            <div class="cart-btn-wrapper">
+              <button type="submit" class="cart-btn">カートに入れる</button>
+            </div>
+          </form>
+        </div> <!-- /.item-count -->
+        <a class="item-contact" href="/pages/contact-form/">この商品について問い合わせる</a>
+
+      </div><!-- /.detail-content -->
+
+    </div><!-- /.item-content -->
+
+  </div><!-- /.inner -->
+</section><!-- /.p-item-detail_wrap01 -->
+
+
+{% schema %}
+  {
+    "name": "item-detail",
+    "presets": [
+      {
+        "name": "item-detail"
+      }
+    ]
+  }
+{% endschema %}

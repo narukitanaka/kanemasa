@@ -1,0 +1,284 @@
+@use "variable"as v;
+/*************************************************
+common-style
+*************************************************/
+@mixin base_width{
+  margin: 0 auto;
+  width: 1240px;
+}
+// @extendでスタイルの継承
+// @mixinでステイルの定義
+// @includeでmixinの呼び出し
+
+// ブレイクポイント
+// PC基準でコーディングする場合
+$breakpoints: (
+  "sm": "screen and (max-width: 768px)", //スマホ
+  "md": "screen and (max-width: 1200px)", //タブレット
+) !default;
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints , $breakpoint)} {
+    @content;
+  }
+}
+
+// スマホ基準でコーディングする場合
+// $breakpoints: (
+//   "md": "screen and (min-width: 600px)", //タブレット
+//   "lg": "screen and (min-width: 1025px)", //パソコン
+// ) !default;
+// @mixin mq($breakpoint: lg) {
+//   @media #{map-get($breakpoints , $breakpoint)} {
+//     @content;
+//   }
+// }
+
+*{
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','メイリオ', 'Meiryo', '游ゴシック', 'Yu Gothic', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+main {
+  padding-top: 23rem;
+  @include mq(md) {
+    padding-top: 16rem;
+  }
+  @include mq() {
+    padding-top: 0;
+  }
+}
+
+.img-box {
+  img {
+    width: 100%;
+  }
+}
+
+.obj-fit {
+  img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.h-scale {
+  .img-box {
+    overflow: hidden;
+  }
+  img {
+    transition: all .3s;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.flex { 
+  display: flex;
+}
+
+.inner {
+  position: relative;
+  width: 1240px;
+  margin: 0 auto;
+  @include mq(md) {
+    width: 80%;
+  }
+  @include mq() {
+    width: 90%;
+  }
+}
+
+div,
+p,
+li,
+a {
+  color: v.$main-txt;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 1px;
+  @include mq() {
+    font-size: 1.4rem;
+  }
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  letter-spacing: 4.4px;
+  text-align: center;
+  margin-bottom: 1rem;
+  @include mq() {
+    font-size: 1.8rem;
+  }
+}
+
+
+.clearfix:after {
+  content:"";
+  display:block;
+  clear:both;
+}
+
+
+// /iOSでのデフォルトスタイルをリセット /
+input[type="submit"],
+input[type="button"] {
+border-radius: 0;
+-webkit-box-sizing: content-box;
+-webkit-appearance: button;
+appearance: button;
+border: none;
+box-sizing: border-box;
+&::-webkit-search-decoration {
+display: none;
+}
+&:focus {
+outline-offset: -2px;
+}
+}
+
+
+.wrap-hidden {
+  overflow: hidden;
+}
+
+
+.btn,.btn02 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28rem;
+  aspect-ratio: 1/.22;
+  font-size: 1.6rem;
+  transition: all .3s;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10%;
+    width: 1.6rem;
+    aspect-ratio: 1/1;
+    transition: all .3s;
+  }
+}
+.btn {
+  color: #fff;
+  background-color: v.$main-txt;
+  &:hover {
+    background-color: v.$sub-color01;
+    &::before {
+      transform: translate(.7rem,-50%);
+    }
+  }
+  &::before {
+    background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/arrow02-right-w.svg) no-repeat center/contain;
+  }
+}
+.btn02 {
+  color: v.$sub-color01;
+  border: 1px solid v.$sub-color01;
+  background-color: #fff;
+  &:hover {
+    background-color: v.$main-txt;
+    border: 1px solid v.$main-txt;
+    color: #fff;
+    &::before {
+      background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/arrow02-right-w.svg) no-repeat center/contain;
+      transform: translate(.7rem,-50%);
+    }
+  }
+  &::before {
+    background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/arrow02-right-g.svg) no-repeat center/contain;
+  }
+}
+
+
+
+.item-card  {
+  position: relative;
+  width: 22rem;
+  .img-box {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin-bottom: .8rem;
+  }
+  .cate {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: v.$sub-color01;
+    @include mq() {
+      font-size: 1.4rem;
+    }
+  }
+  .name {
+    font-size: 1.6rem;
+    @include mq() {
+      font-size: 1.4rem;
+      line-height: 1.5;
+    }
+  }
+  .price {
+    font-size: 1.6rem;
+    margin-bottom: 1.7rem;
+    @include mq() {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+  }
+  .add-cart {
+    button {
+      position: relative;
+      background-color: v.$sub-color01;
+      width: 100%;
+      height: 4.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #fff;
+      transition: all .3s;
+      @include mq() {
+        height: 4rem;
+        font-size: 1.3rem;
+        line-height: 1;
+        padding-left: 1rem;
+      }
+      &:hover {
+        background-color: v.$main-txt;
+      }
+      &::before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 2rem;
+        content: "";
+        width: 2.25rem;
+        aspect-ratio: 1/1;
+        background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/iocn-cart02.svg) no-repeat center/contain;
+        @include mq() {
+          left: 2.4rem;
+          width: 1.8rem;
+        }
+      }
+    }
+  }
+
+}
+

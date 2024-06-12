@@ -1,0 +1,131 @@
+<div class="under-mv p-itemlist">
+  <div class="img-box obj-fit">
+    <picture>
+      <source srcset="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/under-mv_sp.jpg" media="(max-width: 769px)">
+      <img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/under-mv.jpg" alt="">
+    </picture>
+  </div>
+  <div class="ttl">
+    <h2>商品一覧-{{ collection.title }}</h2>
+    <p class="sub-ttl">Line Up</p>
+  </div>
+</div><!-- /.mv -->
+
+<section class="p-under p-itemlist_wrap01">
+  <div class="inner">
+    <div class="cate-list flex">
+      <a {% if request.path contains '/vegetables' %}class="active"{% endif %} href="/collections/vegetables/">野菜</a>
+      <a {% if request.path contains '/fruit' %}class="active"{% endif %} href="/collections/fruit/">果物</a>
+      <a {% if request.path contains '/other' %}class="active"{% endif %} href="/collections/other/">その他</a>
+      <a {% if request.path contains '/standard' %}class="active"{% endif %} href="/collections/standard/">定番商品</a>
+      <a {% if request.path contains '/seasonal' %}class="active"{% endif %} href="/collections/seasonal/">季節限定</a>
+    </div>
+  </div><!-- /.inner -->
+</section><!-- /.p-company_wrap01 -->
+
+<div class="p-under asirai-obi img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/ashirai-obi02.svg" alt=""></div>
+
+<section class="p-under p-itemlist_wrap02">
+  <div class="inner">
+
+    <div class="sort">
+      <form  id="FacetSortForm">
+        <p>並び順：</p>
+        {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+        <div class="select">
+          <select name="sort_by" id="SortBy" aria-describedby="a11y-refresh-page-message">
+            <option value="manual" {% if sort_by == "manual" %}selected{% endif %}>おすすめ順</option>
+            <option value="created-descending" {% if sort_by == "created-descending" %}selected{% endif %}>新着順</option>
+            <option value="price-ascending" {% if sort_by == "price-ascending" %}selected{% endif %}>価格が安い順</option>
+            <option value="price-descending" {% if sort_by == "price-descending" %}selected{% endif %}>価格が高い順</option>
+          </select>
+        </div>
+      </form>
+      <span class="arrow"></span>
+    </div><!-- /.sort -->
+
+    <div class="item-list flex">
+
+      {% assign has_products = false %}
+
+      {% for product in collection.products %}
+
+          {% assign has_products = true %}
+
+          <div class="item-card fadeIn">
+            <a class="h-scale" href="{{ product.url }}">
+              <div class="img-box"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
+              <p class="cate">
+                {% for collection in product.collections %}
+                  {% assign excluded_collections = 'all,tax' | split: ',' %}
+                  {% unless excluded_collections contains collection.handle %}
+                    {{ collection.title }}
+                  {% endunless %}
+                {% endfor %}
+              </p>
+              <p class="name">{{ product.title }}</p>
+              <p class="price">{{ product.price | money }}円(税込)</p>
+            </a>
+            <div class="add-cart">
+              <form action="/cart/add" method="post">
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit">カートに入れる</button>
+              </form>
+            </div>
+          </div><!-- /.item-card -->
+
+      {% endfor %}
+
+    </div><!-- /.item-list -->
+
+    {% unless has_products %}
+      <p class="unless-has">該当する商品がありません。</p>
+    {% endunless %}
+
+    <button class="fadeIn" id="load-more">さらに読み込む</button>
+
+
+
+  </div><!-- /.inner -->
+</section><!-- /.p-company_wrap02 -->
+
+<div class="p-under asirai-obi img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/ashirai-obi02.svg" alt=""></div>
+
+
+
+{% javascript %}
+  //ソート
+  let parameters = {};
+    if (location.search.length) {
+    let keyValue = "";
+    let couples = location.search.substr(1).split('&');
+    for (let i = 0; i < couples.length; i++) {
+      keyValue = couples[i].split('=');
+      if (keyValue.length > 1) {
+        parameters[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+      }
+    }
+  }
+  const selectElement = document.querySelector("#SortBy");
+  selectElement.addEventListener("change", function(event) {
+    parameters.sort_by = event.target.value;
+    const url = Object.keys(parameters).map(function(key) {
+      return encodeURIComponent(key) + '=' + encodeURIComponent(parameters[key])
+    }).join('&');
+    location.search = url;
+  });
+{% endjavascript %}
+
+
+
+{% schema %}
+  {
+    "name": "item-list",
+    "presets": [
+      {
+        "name": "item-list"
+      }
+    ]
+  }
+{% endschema %}

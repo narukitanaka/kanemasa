@@ -1,0 +1,210 @@
+<div class="mv">
+  <div class="mv-swiper">
+    <div class="swiper-wrapper">
+
+    {% for block in section.blocks %}
+      {% if block.type == 'banner-top01' %}
+        <div class="swiper-slide img-box obj-fit mv01">
+          <a href="{{ block.settings.link_banner }}">
+            <picture>
+              <source srcset="{{ block.settings.image_banner_sp | img_url: 'master' }}" media="(max-width: 769px)">
+              <img src="{{ block.settings.image_banner_pc | img_url: 'master' }}" alt="">
+            </picture>
+          </a>
+        </div><!-- /.swiper-slide -->
+      {% endif %}
+    {% endfor %}
+
+    </div><!-- /.swiper-wrapper -->
+
+    <!-- ページネーション -->
+    <div class="swiper-pagination"></div>
+    <!-- 前後の矢印 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+  </div><!-- /.mv-swiper -->
+</div><!-- /.mv -->
+
+<section class="p-top p-top_wrap01">
+  <div class="inner">
+    <div class="info fadeIn">
+      <p><span>ご案内</span></p>
+      <p class="title">気候などの影響により、配達が遅れる可能性がございます。あらかじめご了承くださいませ。</p>
+    </div><!-- /.info -->
+
+    <div class="flex banner-area">
+      {% for block in section.blocks %}
+        {% if block.type == 'banner-top02' %}
+          <div class="box fadeIn">
+            <div class="img-box obj-fit">
+              <a href="{{ block.settings.link_banner02 }}"><img src="{{ block.settings.image_banner02 | img_url: 'master' }}" alt=""></a>
+            </div>
+          </div><!-- /.box -->
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div><!-- /.inner -->
+</section><!-- /.p-top_wrap01 -->
+
+<div class="p-top asirai-obi img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/ashirai-obi01.svg" alt=""></div>
+
+<section class="p-top p-top_wrap02">
+  <div class="inner">
+    <h2 class="fadeIn">よく売れている商品</h2>
+    <p class="sub-ttl">Best Seller</p>
+    <div class="ranking-swiper">
+
+      <div class="flex swiper-wrapper">
+
+      {% for product in collections.all.products %}
+        <div class="item-card swiper-slide fadeIn">
+          <a class="h-scale" href="{{ product.url }}">
+            <div class="img-box"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
+            <p class="cate">
+              {% for collection in product.collections %}
+                {% assign excluded_collections = 'all,tax' | split: ',' %}
+                {% unless excluded_collections contains collection.handle %}
+                  {{ collection.title }}
+                {% endunless %}
+              {% endfor %}
+            </p>
+            <p class="name">{{ product.title }}</p>
+            <p class="price">{{ product.price | money }}円(税込)</p>
+          </a>
+          <div class="add-cart">
+            <form action="/cart/add" method="post">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+              <input type="hidden" name="quantity" value="1">
+              <button type="submit">カートに入れる</button>
+            </form>
+          </div>
+        </div><!-- /.item-card -->
+      {% endfor %}
+
+      </div><!-- /.swiper-wrapper -->
+      <div class="swiper-scrollbar"></div>
+
+    </div>
+  </div><!-- /.inner -->
+</section><!-- /.p-top_wrap02 -->
+
+<div class="p-top asirai-obi"><img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/ashirai-obi02.svg" alt=""></div>
+
+<section class="p-top p-top_wrap03">
+  <div class="inner">
+    <h2 class="fadeIn">カテゴリ</h2>
+    <p class="sub-ttl">Category</p>
+
+    <div class="flex">
+
+      <div class="box fadeIn">
+        <a href="/collections/vegetables/">
+          <p>野菜</p>
+          <img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/top-category-img01.jpg" alt="">
+        </a>
+      </div><!-- /.box -->
+      <div class="box fadeIn">
+        <a href="/collections/fruit/">
+          <p>果物</p>
+          <img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/top-category-img02.jpg" alt="">
+        </a>
+      </div><!-- /.box -->
+      <div class="box fadeIn">
+        <a href="/collections/other/">
+          <p>その他</p>
+          <img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/top-category-img03.jpg" alt="">
+        </a>
+      </div><!-- /.box -->
+      <div class="box fadeIn">
+        <a href="/collections/standard/">
+          <p>定番商品</p>
+          <img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/top-category-img04.jpg" alt="">
+        </a>
+      </div><!-- /.box -->
+      <div class="box fadeIn">
+        <a href="/collections/seasonal/">
+          <p>季節限定</p>
+          <img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/top-category-img05.jpg" alt="">
+        </a>
+      </div><!-- /.box -->
+
+    </div><!-- /.flex -->
+
+    <a class="btn" href="/collections/all/">全ての商品を見る</a>
+
+  </div><!-- /.inner -->
+  <div class="goya img-box fadeIn"><img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/ashirai-goya.png" alt=""></div>
+  <div class="negi img-box fadeIn"><img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/ashirai-negi.png" alt=""></div>
+</section><!-- /.p-top_wrap03 -->
+
+<div class="p-top asirai-obi"><img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/ashirai-obi02.svg" alt=""></div>
+
+<section class="p-top p-top_wrap04">
+  <div class="inner">
+    <div class="flex">
+      <div class="left">
+        <h2>兼正青果が選ばれる理由</h2>
+        <p class="sub-ttl">Features</p>
+      </div><!-- /.left -->
+      <div class="right">
+        <p>
+          兼正青果は、1つ1つの商品の特徴を熟知した<br class="u-sp">目利きのプロたちが厳選して<br class="u-sp">
+          「良いもの」を仕入れております。
+        </p>
+        <a class="btn02" href="/pages/about/">兼正青果について知る</a>
+      </div><!-- /.right -->
+    </div>
+  </div><!-- /.inner -->
+</section><!-- /.p-top_wrap04 -->
+
+
+{% schema %}
+  {
+    "name": "top-main",
+    "presets": [
+      {
+        "name": "top-main"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "banner-top01",
+        "name": "FVバナー",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_banner_pc",
+            "label": "PC画像"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_banner_sp",
+            "label": "SP画像"
+          },
+          {
+            "type": "url",
+            "id": "link_banner",
+            "label": "リンク"
+          }
+        ]
+      },
+      {
+        "type": "banner-top02",
+        "name": "案内下バナー",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_banner02",
+            "label": "画像"
+          },
+          {
+            "type": "url",
+            "id": "link_banner02",
+            "label": "リンク"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

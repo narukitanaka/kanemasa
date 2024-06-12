@@ -1,0 +1,1251 @@
+@use "variable"as v;
+@use "common"as c;
+/*************************************************
+  下層ページ　共通
+*************************************************/
+.under-mv {
+  position: relative;
+  @include c.mq() {
+    margin-top: 15.8rem;
+  }
+  .img-box {
+    aspect-ratio: 1/.14;
+    @include c.mq() {
+      aspect-ratio: 1/.51;
+    }
+  }
+  .ttl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    @include c.mq() {
+      width: 100%;
+    }
+    h2,p {
+      color: #fff;
+      font-weight: 700;
+    }
+    h2 {
+      font-size: 2.4rem;
+      letter-spacing: 2px;
+      @include c.mq() {
+        font-size: 1.8rem;
+        margin-bottom: .5rem;
+      }
+    }
+    p {
+      font-family: v.$font-mon;
+      font-size: 2rem;
+      text-align: center;
+      @include c.mq() {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+.p-under {
+  .asirai-obi {
+    width: 100%;
+    height: 6.8rem;
+  }
+  &.asirai-obi {
+    width: 100%;
+    height: 6.8rem;
+  }
+}
+.p-company_wrap01,.p-terms_wrap01 {
+  table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 1rem 0;
+    margin-bottom: 5rem;
+    tr {
+      th,td {
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: 2px;
+        line-height: 1.7;
+        padding: 1.5rem 0;
+        @include c.mq() {
+          display: block;
+          line-height: 1.5;
+        }
+      }
+      th {
+        width: 15%;
+        border-bottom: 2px dotted v.$sub-color01;
+        @include c.mq(md) {
+          width: 22%;
+        }
+        @include c.mq() {
+          width: 100%;
+          padding: 2rem 0 0 1rem;
+          border-bottom: none;
+          font-size: 1.5rem;
+        }
+      }
+      td {
+        border-bottom: 2px dotted v.$main-txt;
+        line-height: 2;
+        @include c.mq() {
+          padding: 1rem 0 2rem 1rem;
+          font-size: 1.4rem;
+          line-height: 1.7;
+        }
+        span {
+          color: #f00;
+        }
+      }
+    }
+  }
+}
+
+
+/*************************************************
+  兼正青果が選ばれる理由
+*************************************************/
+.p-about {
+  &.under-mv {
+    position: relative;
+    .img-box {
+      aspect-ratio: none;
+      @include c.mq() {
+        aspect-ratio: 1/1.01;
+      }
+    }
+    .ttl {
+      top: v.pxtovw(120);
+      left: v.pxtovw(100);
+      transform: none;
+      @include c.mq() {
+        top: v.pxtovw_sp(70);
+      }
+      h2 {
+        @include c.mq() {
+          font-size: 2.2rem;
+          text-align: left;
+          margin-bottom: 1.5rem;
+        }
+      }
+      p {
+        text-align: left;
+        &.sub-ttl {
+          @include c.mq() {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+  h2 {
+    color: v.$sub-color01;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+  }
+}
+
+.p-about_wrap01 {
+  position: relative;
+  h2 {
+    text-align: left;
+    margin-bottom: 3.5rem;
+    line-height: 1.5;
+    color: v.$sub-color01;
+    @include c.mq() {
+      margin-bottom: 1.8rem;
+    }
+  }
+  p {
+    width: 64rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    @include c.mq(md) {
+      width: 40rem;
+    }
+    @include c.mq() {
+      width: 100%;
+      margin-bottom: 0;
+    }
+  }
+  .inner {
+    position: relative;
+    padding: 21.4rem 0 7rem;
+    @include c.mq() {
+      padding: 10.5rem 0 3.8rem;
+    }
+    .img-box {
+      position: absolute;
+      right: 0;
+      bottom: 7rem;
+      width: 55rem;
+      aspect-ratio: 1/1.15;
+      box-shadow: v.$shadow02;
+      @include c.mq(md) {
+        width: 40rem;
+      }
+      @include c.mq() {
+        position: static;
+        width: 100%;
+      }
+      &.u-sp {
+        aspect-ratio: 1/.49;
+        margin-bottom: 4.5rem;
+      }
+    }
+  }
+  .ashirai {
+    position: absolute;
+    top: v.pxtovw(-123);
+    left: v.pxtovw(-55);
+    width: 30rem;
+    @include c.mq() {
+      top: v.pxtovw_sp(-165);
+      left: v.pxtovw_sp(-55);
+      width: v.pxtovw_sp(240);
+      transform: rotate(20deg);
+    }
+    img {
+      filter: drop-shadow(v.$shadow03);
+    }
+  }
+}
+
+.p-about_wrap02 {
+  position: relative;
+  background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/texture.jpg) no-repeat center/cover;
+  .inner {
+    padding: 7.7rem 0;
+    @include c.mq() {
+      padding: 1rem 0 5rem;
+    }
+  }
+  .box {
+    justify-content: space-between;
+    margin-bottom: 17rem;
+    @include c.mq(md) {
+      flex-direction: column;
+      margin-bottom: 7.6rem;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+      flex-direction: row-reverse;
+      @include c.mq(md) {
+        flex-direction: column;
+      }
+      .sub-ttl {
+        @include c.mq() {
+          width: 19rem;
+          margin: 0 0 1rem auto;
+        }
+      }
+    }
+    .sub-ttl {
+      font-family: v.$font-mon;
+      color: rgba($color: #ffffff, $alpha: 0.5);
+      font-size: 9.6rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      @include c.mq(md) {
+        font-size: 4rem;
+        line-height: 1;
+      }
+      span {
+        @include c.mq(md) {          
+          display: block;
+          font-size: 6.4rem;
+        }
+      }
+    }
+    .left {
+      width: 55rem;
+      aspect-ratio: 1/.91;
+      box-shadow: v.$shadow02;
+      @include c.mq(md) {
+        width: 100%;
+        max-width: 60rem;
+        max-height: 35rem;
+        aspect-ratio: 1/.71;
+        margin-bottom: 2rem;
+      }
+    }
+    .right {
+      h2 {
+        text-align: left;
+        margin-bottom: 3rem;
+        color: v.$sub-color01;
+        @include c.mq() {
+          margin-bottom: 2rem;
+        }
+      }
+      p {
+        width: 64rem;
+        letter-spacing: 1.5px;
+        line-height: 2;
+        @include c.mq(md) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .ashirai {
+    position: absolute;
+    img {
+      filter: drop-shadow(v.$shadow03);
+    }
+    &.goya {
+      width: 30rem;
+      top: v.pxtovw(-125);
+      right: v.pxtovw(-58);
+      @include c.mq(md) {
+      }
+      @include c.mq() {
+        width: v.pxtovw_sp(224);
+        top: v.pxtovw_sp(-40);
+        right: v.pxtovw_sp(-70);
+        transform: rotate(10deg);
+      }
+    }
+    &.negi {
+      width: 30rem;
+      top: v.pxtovw(500);
+      left: v.pxtovw(-50);
+      @include c.mq(md) {
+        top: 90vw;
+        left: auto;
+        right: -5vw;
+      }
+      @include c.mq() {
+        width: v.pxtovw_sp(227);
+        top: v.pxtovw_sp(860);
+        left: v.pxtovw_sp(-80);
+      }
+    }
+    &.kinoko {
+      width: 24rem;
+      top: v.pxtovw(726);
+      right: v.pxtovw(-40);
+      @include c.mq(md) {
+        display: none;
+      }
+    }
+  }
+}
+
+
+/*************************************************
+  会社概要
+*************************************************/
+.p-company_wrap01 {
+  padding-top: 5rem;
+}
+.p-company_wrap02 {
+  background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/texture.jpg) no-repeat center/cover;
+  .inner {
+    padding: 5rem 0;
+  }
+  .sub-ttl {
+    font-family: v.$font-mon;
+    color: #12963B;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5rem;
+    @include c.mq() {
+      font-size: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+  }
+  .box {
+    margin-bottom: 6rem;
+    justify-content: space-between;
+    @include c.mq() {
+      display: block;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    .left {
+      width: 58rem;
+      @include c.mq(md) {
+        width: 38rem;
+      }
+      @include c.mq() {
+        width: 100%;
+      }
+      h3 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-align: center;
+        padding: 1rem;
+        color: #fff;
+        background: v.$gradient01;
+        margin-bottom: 1.7rem;
+        @include c.mq() {
+          letter-spacing: 2px;
+        }
+      }
+      p {
+        letter-spacing: 4px;
+        @include c.mq() {
+          letter-spacing: 1px;
+          margin-bottom: 2.5rem;
+        }
+      }
+    }
+    .right {
+      width: 62rem;
+      aspect-ratio: 1/.44;
+      @include c.mq(md) {
+        width: 42rem;
+      }
+      @include c.mq() {
+        width: 100%;
+        aspect-ratio: 1/.5;
+      }
+    }
+  }
+}
+
+
+/*************************************************
+  よくあるご質問
+*************************************************/
+.p-faq_wrap01 {
+  .anker-link {
+    margin-bottom: 3.5rem;
+  }
+  .anker-point {
+    margin-top: -10rem;
+    padding-top: 10rem;
+    @include c.mq() {
+      margin-bottom: -5rem;
+      padding-top: 5rem;
+    }
+  }
+  .block {
+    background-color: #fff;
+    padding: 6rem 0;
+    margin-bottom: 8rem;
+    overflow: hidden;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    @include c.mq() {
+      padding: 3rem 0;
+    }
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      text-align: left;
+      padding-bottom: 3rem;
+      border-bottom: 2px dotted v.$main-txt;
+      @include c.mq() {
+        font-size: 1.8rem;
+        padding-bottom: 4rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .qa-list {
+    .qa {
+      position: relative;
+      padding: 3rem 0;
+      border-bottom: 2px dotted v.$main-txt;
+      @include c.mq() {
+        padding: 2rem 0;
+      }
+      &::before {
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        content: "";
+        width: 1.5rem;
+        height: 1.5px;
+        background-color: v.$sub-color01;
+        @include c.mq() {
+          top: 3rem;
+        }
+      }
+      &::after {
+        position: absolute;
+        top: 3.3rem;
+        left: 7px;
+        content: "";
+        width: 1.5px;
+        height: 1.5rem;
+        background-color: v.$sub-color01;
+        transition: all .1s;
+        @include c.mq() {
+          top: 2.3rem;
+        }
+      }
+      dt {
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 4px;
+        color: #000;
+        padding-left: 3.5rem;
+        @include c.mq() {
+          font-size: 1.4rem;
+          line-height: 1.5;
+          letter-spacing: 2px;
+        }
+      }
+      dd {
+        background-color: rgba($color: #C8F3D5, $alpha: .2);
+        padding: 3rem;
+        margin-top: 3rem;
+        @include c.mq() {
+          padding: 1.5rem;
+          margin-top: 2rem;
+        }
+        p {
+          font-size: 1.6rem;
+          line-height: 2;
+          letter-spacing: 2px;
+          color: v.$main-txt;
+          margin-bottom: 3rem;
+          @include c.mq() {
+            font-size: 1.4rem;
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+          span {
+            color: #f00;
+          }
+        }
+      }
+    }
+    .open {
+      &::after {
+        width: 0;
+      }
+    }
+  }
+}
+
+
+/*************************************************
+  お問い合わせ
+*************************************************/
+.p-contact_wrap01 {
+  padding-top: 5rem;
+  .message {
+    font-size: 1.5rem;
+    color: v.$main-txt;
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 5rem;
+    @include c.mq() {
+      font-size: 1.4rem;
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    a {
+      color: v.$main-txt;
+    }
+  }
+  .contact-tel {
+    border-top: 2px dotted v.$main-txt;
+    border-bottom: 2px dotted v.$main-txt;
+    padding: 3rem 0;
+    text-align: center;
+    margin-bottom: 5rem;
+    @include c.mq() {
+      padding: 2rem 0;
+      margin-bottom: 6rem;
+    }
+    p {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: v.$main-txt;
+      @include c.mq() {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+    }
+    a {
+      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.4rem;
+      font-size: 3.5rem;
+      color: v.$sub-color01;
+      margin-bottom: 1.5rem;
+      @include c.mq() {
+        font-size: 2.5rem;
+      }
+    }
+    .business-hours {
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      @include c.mq() {
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: v.$main-txt;
+    margin-bottom: 2.8rem;
+    @include c.mq() {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .form_wrap {
+    background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/texture.jpg);
+    padding: 5rem 6rem;
+    @include c.mq() {
+      padding: 4rem 2rem 6rem;
+    }
+    .inner {
+      width: auto;
+      max-width: 124rem;
+    }
+    form {
+      table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 0 2rem;
+        margin-bottom: 5rem;
+        @include c.mq() {
+          margin-bottom: 0;
+        }
+        tr {
+          &:last-of-type {
+            th {
+              padding-top: 1.5rem;
+              vertical-align: baseline;
+            }
+            td {
+              @include c.mq() {
+                padding-bottom: 2rem;
+              }
+            }
+          }
+          th {
+            width: 16%;
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            vertical-align: middle;
+            padding-left: 1.9rem;
+            color: #fff;
+            background-color: v.$sub-color01;
+            @include c.mq(md) {
+              width: 25%;
+            }
+            @include c.mq() {
+              display: block;
+              width: 100%;
+              padding: 1rem 1.5rem;
+            }
+          }
+          td {
+            width: 84%;
+            margin-bottom: 2rem;
+            @include c.mq() {
+              display: block;
+              width: 100%;
+              margin-bottom: 0;
+            }
+            input,textarea {
+              width: 100%;
+              background-color: #F5F5F5;
+              padding: 1.5rem 2.5rem;
+              font-size: 1.4rem;
+              letter-spacing: 1px;
+              @include c.mq() {
+                padding: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+      p {
+        text-align: center;
+        font-weight: 400;
+        margin-bottom: 5rem;
+        @include c.mq() {
+          text-align: left;
+          margin-bottom: 3rem;
+        }
+        a {
+          color: v.$sub-color01;
+          text-decoration: underline;
+        }
+      }
+      .btn-area {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+/*************************************************
+  お問い合わせ　送信後
+*************************************************/
+.form-success-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #428445 !important;
+  margin-bottom: 4rem;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  @include c.mq(sm){
+    font-size: 14px !important;
+    text-align: left !important;
+  }
+}
+.form-success-title svg {
+  width: 2rem;
+  @include c.mq(sm){
+    width: 5rem;
+  }
+}
+.form-error-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: v.$sub-color01 !important;
+  margin-bottom: 1rem;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  @include c.mq(sm){
+    font-size: 14px !important;
+  }
+}
+.form-error-title svg {
+  width: 2rem;
+}
+.form-error-text {
+  display: block;
+  font-size: 16px !important;
+  text-align: center;
+  color: #DD0000;
+  margin-bottom: 4rem;
+  position: sticky;
+  @include c.mq(sm) {
+    font-size: 14px !important;
+  }
+}
+
+/*************************************************
+  特定商取引法の表示
+*************************************************/
+.p-terms_wrap01 {
+  padding-top: 5rem;
+}
+
+
+/*************************************************
+  プライバシーポリシー
+*************************************************/
+.p-policy_wrap01 {
+  padding-top: 5rem;
+  .privacy {
+    margin-bottom: 5rem;
+    .box {
+      margin-bottom: 5rem;
+      @include c.mq() {
+        margin-bottom: 4rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        text-align: left;
+        letter-spacing: 2px;
+        @include c.mq() {
+          font-size: 1.5rem;
+        }
+      }
+      p {
+        font-size: 1.4rem;
+        line-height: 2.2;
+        @include c.mq() {
+          font-size: 1.4rem;
+          line-height: 2;
+        }
+      }
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+/*************************************************
+  商品一覧
+*************************************************/
+.cate-list {
+  padding: 5rem 0;
+  flex-wrap: wrap;
+  gap: 2.2rem;
+  @include c.mq() {
+    gap: 1.5rem;
+  }
+  a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc((100% / 5) - (8.8rem / 5));
+    aspect-ratio: 1/.22;
+    font-size: 1.6rem;
+    color: v.$sub-color01;
+    outline-offset: -.5rem;
+    outline: 1px solid v.$sub-color01;
+    box-shadow: v.$shadow04;
+    transition: all .3s;
+    @include c.mq(md) {
+      width: calc((100% / 3) - (4.4rem / 3));
+    }
+    @include c.mq() {
+      font-size: 1.5rem;
+      width: calc((100% / 2) - (1.5rem /2));
+      aspect-ratio: 1/.35;
+    }
+    &:hover {
+      color: #fff;
+      background-color: v.$sub-color01;
+      outline: 1px solid #fff;
+      &::before {
+        background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/arrow02-right-w.svg) no-repeat center/contain;
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 10%;
+      width: 1.2rem;
+      aspect-ratio: 1/1;
+      background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/arrow02-right-g.svg) no-repeat center/contain;
+      transition: all .3s;
+    }
+  }
+  .active {
+    color: #fff;
+    background-color: v.$sub-color01;
+    outline: 1px solid #fff;
+    &::before {
+      background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/arrow02-right-w.svg) no-repeat center/contain;
+    }
+  }
+}
+.sort {
+  padding: 5rem 0 4rem;
+  form {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    p {
+      line-height: 1;
+      color: v.$sub-color01;
+    }
+    .select {
+      position: relative;
+      &::before {
+        position: absolute;
+        top: 25%;
+        right: 5%;
+        content: "";
+        width: 1.2rem;
+        aspect-ratio: 2/1;
+        background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/arrow01-b-g.svg) no-repeat center/contain;
+      }
+    }
+    select {
+      font-size: 1.5rem;
+      font-weight: 
+      500;
+      line-height: 1;
+      color: v.$sub-color01;
+      padding: 0 5rem 1rem 1rem;
+      border-bottom: 1px solid v.$sub-color01;
+      @include c.mq() {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+.p-itemlist_wrap02 {
+  margin-bottom: 15rem;
+  @include c.mq() {
+    margin-bottom: 8rem;
+  }
+  .item-list {
+    gap: 3.5rem;
+    row-gap: 10rem;
+    flex-wrap: wrap;
+    @include c.mq(md) {
+      gap: 1rem;
+      row-gap: 5rem;
+    }
+    .item-card {
+      @include c.mq(md) {
+        width: calc((100% / 4) - (3rem / 4));
+      }
+      @include c.mq() {
+        width: calc((100% / 2) - (.5rem));
+      }
+    }
+  }
+}
+#load-more {
+  position: relative;
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 1.8rem 0;
+  margin-top: 8rem;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  transition: all .3s;
+  @include c.mq() {
+    font-size: 1.5rem;
+  }
+  &:hover {
+    color: v.$sub-color01;
+  }
+  &::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 52rem;
+    content: "";
+    width: 1.5rem;
+    height: 1.5px;
+    background-color: v.$sub-color01;
+    @include c.mq() {
+      right: 5rem;
+    }
+  }
+  &::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 52.7rem;
+    content: "";
+    width: 1.5px;
+    height: 1.5rem;
+    background-color: v.$sub-color01;
+    transition: all .1s;
+    @include c.mq() {
+      right: 5.7rem;
+    }
+  }
+}
+
+
+/*************************************************
+  商品詳細
+*************************************************/
+.p-item-detail_wrap {
+  padding-top: 6.6rem;
+  position: relative;
+  @include c.mq() {
+    padding-top: 17.6rem;
+  }
+  .negi {
+    position: absolute;
+    bottom: v.pxtovw(-320);
+    left: v.pxtovw(-60);
+    width: 30rem;
+    @include c.mq(md) {
+      width: 25rem;
+      bottom: -30rem;
+    }
+    @include c.mq() {
+      bottom: v.pxtovw_sp(-180);
+      left: v.pxtovw_sp(-30);
+      width: 14rem;
+    }
+  }
+}
+.detail-bottom {
+  padding-top: 0;
+  .inner{
+    &.empty {
+      height: 1px;
+      margin-bottom: 15.3rem;
+    }
+  }
+}
+.item-content {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 9rem;
+  @include c.mq() {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+}
+.img-content {
+  width: 55rem;
+  flex-shrink: 0;
+  @include c.mq(md) {
+    width: 40rem;
+  }
+  @include c.mq(){
+    width: 100%;
+    flex-basis: 100%;
+    margin-right: initial;
+  }
+}
+.img-wrapper {
+  .swiper-item {
+    overflow: hidden;
+  }
+  .swiper-slide .img-wrap {
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -o-object-position: center;
+      object-position: center;
+    }
+  }
+}
+.thumb-list {
+  display: flex;
+  margin-top: 1.4rem;
+  flex-wrap: wrap;
+  gap: 2.6rem;
+  @include c.mq(md) {
+    gap: 1rem;
+  }
+  .thumb-item {
+    width: calc((100% / 6) - (13rem / 6));
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    @include c.mq(md) {
+      width: calc((100% / 4) - (3rem / 4));
+    }
+  }
+  .thumb-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      -o-object-position: center;
+      object-position: center;
+    }
+  }
+}
+
+// 右側のコンテンツ
+.detail-content {
+  width: 100%;
+  @include c.mq(){
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .cate {
+    font-size: 1.6rem;
+    color: v.$sub-color01;
+    margin-bottom: 1rem;
+  }
+  .name {
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    @include c.mq() {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+  }
+  .price {
+    font-size: 2.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding-bottom: 2.8rem;
+    margin-bottom: 3.2rem;
+    border-bottom: 1px solid #333;
+    @include c.mq() {
+      line-height: 1;
+    }
+    span {
+      font-size: 1.6rem;
+    }
+  }
+  .body-txt {
+    line-height: 2;
+    letter-spacing: 2px;
+    margin-bottom: 3.5rem;
+    span {
+      @include c.mq() {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .item-count {
+    margin-bottom: 1.5rem;
+    form {
+      display: block;
+    }
+    .product-quantity_wrapper{
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 3rem;
+      @include c.mq() {
+        margin-bottom: 2rem;
+      }
+      .p {
+        font-size: 1.5rem;
+      }
+      .product-quantity {
+        display: flex;
+        border: 1px solid #29294A;
+        text-align: center;
+        font-size: 16px;
+        height: 5rem;
+        button {
+          width: 5rem;
+        }
+        input {
+          width: initial;
+          padding: initial;
+          border-radius: initial;
+          width: 8.7rem;
+        }
+      }
+    }
+  }
+  // input numberの非表示
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+  .cart-btn {
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: v.$sub-color01;
+    height: 5.5rem;
+    display: grid;
+    place-content: center;
+    width:  40rem;
+    @include c.mq() {
+      width: 100%;
+    }
+    cursor: pointer;
+    transition: all 0.3s;
+    &::before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 20%;
+      content: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/iocn-cart02.svg);
+      width: 12px;
+      aspect-ratio: 1/.95;
+    }
+    &:hover {
+      background-color: #3f3b3a;
+    }
+  }
+  .item-contact {
+    display: inline-block;
+    opacity: .8;
+    text-decoration: underline;
+    margin-bottom: 3.5rem;
+  }
+}
+
+
+.recomend_wrap {
+  margin-bottom: 15.3rem;
+  @include c.mq() {
+    margin-bottom: 10rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    padding-bottom: 2rem;
+    margin-bottom: 3.8rem;
+    @include c.mq() {
+      margin-bottom: 2.5rem;
+    }
+  }
+  .flex {
+    gap: 3.5rem;
+    @include c.mq(md) {
+      gap: 2rem;
+      row-gap: 4rem;
+      flex-wrap: wrap;
+    }
+    @include c.mq() {
+      gap: 1rem;
+      row-gap: 3rem;
+    }
+  }
+  .item-card {
+    @include c.mq(md) {
+      width: calc((100% / 3) - (4rem / 3));
+    }
+    @include c.mq() {
+      width: calc((100% / 2) - .5rem);
+    }
+  }
+}
+
+
+/*************************************************
+  レビューアプリ
+*************************************************/
+#judgeme_product_reviews {
+  padding-bottom: 5px;
+  .jdgm-rev-widg {
+    max-width: 1240px;
+    padding: 24px 40px;
+    margin: 0 auto;
+    @include c.mq() {
+      width: 90%;
+      max-width: 60rem;
+      padding: 24px 20px;
+    }
+  }
+  .jdgm-form {
+    .jdgm-form__reviewer-name-format-container {
+      display: none;
+    }
+  }
+}

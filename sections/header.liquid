@@ -1,0 +1,89 @@
+<header id="header">
+  <p class="header-obi">沖縄県内外の業者様向け 通販サイト</p>
+  <div class="header_top inner flex">
+    <div class="logo">
+      <a href="{{ routes.root_url }}">
+        <img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/logo01.png" alt="">
+        <h1>飲食店・ホテル様向け 業務用通販サイト</h1>
+      </a>
+    </div>
+    <div class="search u-pc-md">
+      <form method="get" action="/search">
+        <input type="text" name="q" placeholder="キーワードを入力してください">
+        <input type="hidden" name="type" value="product">
+        <button type="submit"><img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/icon-search.svg" alt=""></button>
+      </form>
+    </div>
+    <div class="header-menu">
+      <div class="login">
+        <a href="/account/">
+          <img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/icon-login.svg" alt="">
+          <p>ログイン</p>
+        </a>
+      </div>
+      <div class="cart">
+        <a href="/cart/">
+          <img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/icon-cart.svg" alt="">
+          <p>カート</p>
+        </a>
+      </div>
+      <div class="hamberger-wrap">
+        <div class="hambager-content">
+          <button type="button" class="hambager">
+            <span class="c-line"></span>
+            <span class="c-line"></span>
+            <span class="c-line"></span>
+          </button>
+        </div><!-- /.hambager-content -->
+        <p class="ham-txt">メニュー</p>
+      </div>
+    </div><!-- /.header-menu -->
+  </div><!-- /.header_inner-->
+  <div class="header-bottom">
+    <nav>
+      <ul>
+        <li><a href="{{ routes.root_url }}">トップページ<span>Top page</span></a></li>
+        <li><a href="/collections/all/">商品一覧<span>Category</span></a></li>
+        <li><a href="/pages/about/">兼正青果が選ばれる理由<span>Features</span></a></li>
+        <li><a href="/pages/faq/">よくあるご質問<span>FAQ</span></a></li>
+        <li><a href="/pages/contact/">お問い合わせ<span>Contact</span></a></li>
+        <li><a href="/pages/company/">会社概要<span>Company</span></a></li>
+      </ul>
+    </nav>
+    <div class="search u-md">
+      <form method="get" action="/search">
+        <input type="text" name="q" placeholder="キーワードを入力してください">
+        <input type="hidden" name="type" value="product">
+        <button type="submit"><img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/icon-search.svg" alt=""></button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<div class="mega-menu">
+  <div class="mega-menu_inner">
+    <nav>
+      <ul class="nav01">
+        <li><a href="{{ routes.root_url }}">トップページ<span>Top page</span></a></li>
+        <li><a href="/pages/about/">兼正青果が選ばれる理由<span>About</span></a></li>
+        <li>
+          <a class="parent arrow" href="#">商品一覧<span>Category</span></a>
+          <ul class="little-nav">
+            <li><a href="/collections/vegetables/">野菜</a></li>
+            <li><a href="/collections/fruit/">果物</a></li>
+            <li><a href="/collections/other/">その他</a></li>
+            <li><a href="/collections/standard/">定番商品</a></li>
+            <li><a href="/collections/seasonal/">季節限定</a></li>
+          </ul>
+        </li>
+        <li><a href="/pages/faq/">よくあるご質問<span>FAQ</span></a></li>
+        <li><a href="/pages/contact/">お問い合わせ<span>Contact</span></a></li>
+        <li><a href="/pages/company/">会社概要<span>Company</span></a></li>
+      </ul>
+      <ul class="nav02">
+        <li><a href="/pages/terms/">特定商取引法に基づく表記</a></li>
+        <li><a href="/pages/policy/">プライバシーポリシー</a></li>
+      </ul>
+    </nav>
+  </div><!-- /.mega-menu_inner -->
+</div><!-- /.mega-menu -->

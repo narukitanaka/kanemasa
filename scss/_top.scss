@@ -1,0 +1,395 @@
+@use "variable"as v;
+@use "common"as c;
+/*************************************************
+top
+*************************************************/
+.p-top {
+  &.asirai-obi {
+    width: 100%;
+    height: 6.8rem;
+  }
+  h2 {
+    position: relative;
+    &::before {
+      content: "";
+      width: 3.7rem;
+      aspect-ratio: 1/1;
+      position: absolute;
+      top: -5rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .sub-ttl {
+    font-family: v.$font-mon;
+    color: #12963B;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    @include c.mq() {
+      font-size: 1.4rem;
+    }
+  }
+}
+.mv {
+  position: relative;
+  margin: 5rem 0 11rem;
+  @include c.mq() {
+    width: 90%;
+    margin: 18rem auto 5rem;
+  }
+  .img-box {
+    aspect-ratio: 1/0.48;
+    box-shadow: v.$shadow02;
+    @include c.mq() {
+      aspect-ratio: 1/.78;
+    }
+  }
+  .swiper-button-prev,.swiper-button-next {
+    color: v.$sub-color01;
+    top: 50%;
+    @include c.mq() {
+      display: none;
+    }
+    &::after {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+  .swiper-pagination {
+    bottom: -4rem !important;
+    @include c.mq() {
+      bottom: -3rem !important;
+    }
+    .swiper-pagination-bullet {
+      border: 1px solid v.$sub-color01;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: v.$sub-color01;
+    }
+  }
+  .swiper-button-prev {
+    left: v.pxtovw(200);
+  }
+  .swiper-button-next {
+    right: v.pxtovw(200);
+  }
+}
+
+.p-top_wrap01 {
+  .info {
+    background-color: #23AA6A;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.3rem 2.8rem;
+    margin-bottom: 7.2rem;
+    @include c.mq() {
+      gap: .9rem;
+      padding: 1rem .7rem;
+      margin-bottom: 4.3rem;
+    }
+    p {
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      color: #fff;
+      @include c.mq() {
+        font-size: 1.3rem;
+        letter-spacing: 0;
+      }
+      span {
+        display: block;
+        min-width: 9rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        color: v.$sub-color01;
+        background-color: #fff;
+        padding: .5rem 1.2rem;
+        @include c.mq() {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 2.4rem;
+          min-width: auto;
+          font-size: 1.2rem;
+          letter-spacing: 1px; 
+          line-height: 1.2;
+          padding: .5rem;
+        }
+      }
+    }
+  }
+  .banner-area {
+    gap: v.pxtovw(34);
+    flex-wrap: wrap;
+    margin-bottom: 9.3rem;
+    @include c.mq() {
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    .box {
+      width: calc((100% / 2) - (v.pxtovw(34) / 2));
+      box-shadow: v.$shadow02;
+      transition: all .3s;
+      @include c.mq() {
+        width: 100%;
+      }
+      &:hover {
+        transform: scale(1.05);
+      }
+      .img-box {
+        aspect-ratio: 1/.4;
+      }
+    }
+  }
+}
+
+.p-top_wrap02 {
+  padding: 9.5rem 0 12rem;
+  background-color: rgba($color: #C8F3D5, $alpha: .2);
+  .flex {
+    gap: 3.5rem;
+    @include c.mq(md) {
+      gap: 1rem;
+    }
+    @include c.mq() {
+      gap: 0;
+    }
+  }
+  h2 {
+    &::before {
+      background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/icon-ranking.svg) no-repeat center/contain;
+    }
+  }
+  .sub-ttl {
+    margin-bottom: 3.6rem;
+    @include c.mq() {
+      margin-bottom: 2.3rem;
+    }
+  }
+  .item-card  {
+    width: 22rem;
+    @include c.mq(md) {
+      width: calc((100% / 5) - (4rem / 5));
+    }
+    @include c.mq() {
+      width: auto;
+    }
+    button {
+      &::before {
+        @include c.mq(md) {
+          display: none;
+        }
+        @include c.mq() {
+          display: block;
+        }
+      }
+    }
+  }
+  .swiper-scrollbar {
+    @include c.mq() {
+      position: absolute;
+      bottom: -8rem !important;
+      background-color: rgba($color: #676767, $alpha: .26);
+      height: 6px !important;
+      margin-bottom:  5rem;
+    }
+    .swiper-scrollbar-drag {
+      @include c.mq() {
+        background-color: #000;
+      }
+    }
+  }
+}
+
+.p-top_wrap03 {
+  position: relative;
+  padding: 11rem 0 9.5rem;
+  background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/texture.jpg) no-repeat center/cover;
+  background-color: rgba($color: #C8F3D5, $alpha: .2);
+  @include c.mq() {
+    padding: 11rem 0 7.3rem;
+  }
+  h2 {
+    &::before {
+      background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/icon-yasai.svg) no-repeat center/contain;
+    }
+  }
+  .sub-ttl {
+    margin-bottom: 5rem;
+    @include c.mq() {
+      margin-bottom: 3rem;
+    }
+  }
+  .flex {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 3.8rem;
+    column-gap: 4.9rem;
+    margin-bottom: 5.3rem;
+    @include c.mq(md) {
+      column-gap: 2rem;
+    }
+    @include c.mq() {
+      justify-content: flex-start;
+      column-gap: 3rem;
+      margin-bottom: 3rem;
+    }
+  }
+  .box {
+    width: calc((100% / 3) - (9.8rem / 3));
+    background-color: #fff;
+    box-shadow: v.$shadow01;
+    @include c.mq(md) {
+      width: calc((100% / 3) - (4rem / 3));
+    }
+    @include c.mq() {
+      width: calc((100% / 2) - 1.6rem);
+      aspect-ratio: 1/1;
+    }
+    a  {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: end;
+    }
+    img {
+      width: 10.9rem;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      object-position: center;
+      @include c.mq() {
+        width: 100%;
+        aspect-ratio: 1/.73;
+      }
+    }
+    p {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: v.$sub-color03;
+      left: 10%;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      @include c.mq() {
+        top: auto;
+        bottom: .7rem;
+        left: 50%;
+        transform: translate(-50%,0);
+        font-size: 1.4rem;
+      }
+    }
+  }
+  .btn {
+    margin: 0 auto;
+    @include c.mq() {
+      width: 100%;
+      aspect-ratio: 1/.17;
+      font-size: 1.5rem;
+    }
+  }
+  .goya,.negi {
+    position: absolute;
+  }
+  .goya {
+    width: 25.6rem;
+    aspect-ratio: 1/.74;
+    top: -10.2rem;
+    right: -5.3rem;
+    @include c.mq() {
+      width: 16.4rem;
+      aspect-ratio: 1/.98;
+      top: v.pxtovw_sp(-113);
+    }
+  }
+  .negi {
+    width: 24.7rem;
+    aspect-ratio: 1/.74;
+    bottom: -12.6rem;
+    left: -5.4rem;
+    @include c.mq() {
+      width: v.pxtovw_sp(186);
+      bottom: v.pxtovw_sp(-130);
+      left:v.pxtovw_sp(-40) ;
+    }
+  }
+}
+
+.p-top_wrap04 {
+  background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/top-about_bg.jpg) no-repeat center/cover;
+  padding: 5.4rem 0 4rem;
+  @include c.mq() {
+    background: url(https://cdn.shopify.com/s/files/1/0706/1687/5244/files/top-about_bg_sp.jpg) no-repeat center/cover;
+    padding: 7.9rem 0 3.6rem;
+  }
+
+  h2,p,.sub-ttl {
+    color: #fff;
+  }
+  .flex {
+    @include c.mq() {
+      flex-direction: column;
+    }
+  }
+  .left {
+    flex-basis: 37%;
+    padding: 7.2rem 0 7.2rem 7.7rem;
+    border-right: 1px solid #fff;
+    @include c.mq(md) {
+      padding: 7.2rem 0 7.2rem 0;
+    }
+    @include c.mq() {
+      padding: 0;
+      border-right: none;
+      border-bottom: 1px solid #fff;
+    }
+    h2,.sub-ttl {
+      text-align: left;
+      text-shadow: v.$shadow02;
+      @include c.mq() {
+        text-align: center;
+      }
+    }
+    h2 {
+      margin-bottom: 1.4rem;
+    }
+    .sub-ttl {
+      text-align: left;
+      @include c.mq() {
+        text-align: center;
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+  .right {
+    flex-basis: 63%;
+    padding-left: 11.4rem;
+    @include c.mq() {
+      padding: 0;
+    }
+    p {
+      width: 30.3rem;
+      margin-bottom: 3.2rem;
+      text-shadow: v.$shadow01;
+      font-weight: 700;
+      padding-left: 1.2rem;
+      @include c.mq() {
+        width: 100%;
+        margin-bottom: 1.7rem;
+        padding-left: 0;
+        padding-top: 2.3rem;
+        text-align: center;
+      }
+    }
+    .btn02 {
+      @include c.mq() {
+        width: 100%;
+        aspect-ratio: 1/.15;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

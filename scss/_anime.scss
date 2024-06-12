@@ -1,0 +1,50 @@
+@use "variable"as v;
+@use "common"as c;
+/*************************************************
+アニメーション
+*************************************************/
+.fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// .anime-ttl01 {
+//   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+//   span { 
+//     display: inline-block;
+//     transform: translateY(100px);
+//     transition: transfrom 0.5s;
+//   }
+// }
+
+// .anime-ttl02 {
+//   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+//   // text-align: center;
+//   h2 {
+//     display: inline-block;
+//     transform: translateY(100px);
+//     transition: transfrom 0.5s;
+//   }
+// }
+
+// .anime-para {
+//   overflow: hidden;
+// }
+// .anime-para02 {
+//   overflow: hidden;
+//   background-color: #000;
+// }
+
+
+// タブ
+// .box01,.box02 {
+//   display: none;
+// }
+// .tab_panel-box.is-show {
+//   display: block;
+// }

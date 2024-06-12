@@ -1,0 +1,74 @@
+<section class="p-under p-item-detail_wrap detail-bottom">
+  <div class="inner">
+
+    {% assign recommend_item = product.metafields.custom._recommend %}
+    {%-  if recommend_item != blank -%}
+      <div class="recomend_wrap">
+        <h2>おすすめ商品</h2>
+        <div class="flex">
+
+        {%- for product in recommend_item.value  -%}
+          <div class="item-card fadeIn">
+            <a class="h-scale" href="{{ product.url }}">
+              <div class="img-box"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
+              <p class="cate">
+                {% for collection in product.collections %}
+                  {% assign excluded_collections = 'all,tax' | split: ',' %}
+                  {% unless excluded_collections contains collection.handle %}
+                    {{ collection.title }}
+                  {% endunless %}
+                {% endfor %}
+              </p>
+              <p class="name">{{ product.title }}</p>
+              <p class="price">{{ product.price | money }}円(税込)</p>
+            </a>
+            <div class="add-cart">
+              <form action="/cart/add" method="post">
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit">カートに入れる</button>
+              </form>
+            </div>
+          </div><!-- /.item-card -->
+        {% endfor %}
+
+        </div><!-- /.flex -->
+      </div>
+    {%- endif -%}
+
+  </div><!-- /.inner -->
+
+  <div class="ashirai negi img-box"><img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/ashirai-negi.png" alt=""></div>
+</section><!-- /.p-item-detail_wrap01 -->
+
+<div class="p-under asirai-obi img-box obj-fit"><img src="https://cdn.shopify.com/s/files/1/0706/1687/5244/files/ashirai-obi02.svg" alt=""></div>
+
+<section class="p-top p-top_wrap04">
+  <div class="inner">
+    <div class="flex">
+      <div class="left">
+        <h2>兼正青果が選ばれる理由</h2>
+        <p class="sub-ttl">Features</p>
+      </div><!-- /.left -->
+      <div class="right">
+        <p>
+          兼正青果は、1つ1つの商品の特徴を熟知した<br class="u-sp">目利きのプロたちが厳選して<br class="u-sp">
+          「良いもの」を仕入れております。
+        </p>
+        <a class="btn02" href="/pages/about/">兼正青果について知る</a>
+      </div><!-- /.right -->
+    </div>
+  </div><!-- /.inner -->
+</section><!-- /.p-top_wrap04 -->
+
+
+{% schema %}
+  {
+    "name": "item-detail02",
+    "presets": [
+      {
+        "name": "item-detail02"
+      }
+    ]
+  }
+{% endschema %}

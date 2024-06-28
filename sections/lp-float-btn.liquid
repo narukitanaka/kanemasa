@@ -1,0 +1,77 @@
+<style>
+  .lp_float-btn {
+    width: {{ section.settings.btn-width_desktop }}%;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    z-index: 10;
+  }
+  @media screen and (max-width: 768px) {
+    .lp_float-btn {
+      width: {{ section.settings.btn-width_mobile }}%;
+    }
+  }
+  .lp_float-btn a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .lp_float-btn a img {
+    width: 100%;
+  }
+</style>
+<div class="lp_float-btn">
+  <a href="{{ section.settings.btnlink }}">
+    <picture>
+      <source srcset="{{ section.settings.btn_mobile | img_url: 'master' }}" media="(max-width: 768px)">
+      <img src="{{ section.settings.btn_desktop | img_url: 'master' }}" alt="" style="width: 100%; vertical-align: bottom;">
+    </picture>
+  </a>
+</div>
+
+{% schema %}
+  {
+    "name": "Float Button",
+    "presets": [{
+      "name": "Float Button",
+      "category": "Custom"
+    }],
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "btn_desktop",
+        "label": "Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "btn_mobile",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "range",
+        "id": "btn-width_desktop",
+        "label": "Width on Desktop (%)",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 20,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "btn-width_mobile",
+        "label": "Width on Mobile (%)",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 20,
+        "unit": "%"
+      },
+      {
+        "type": "url",
+        "id": "btnlink",
+        "label": "Image Link"
+      }
+    ]
+  }
+  {% endschema %}

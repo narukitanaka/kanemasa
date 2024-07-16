@@ -54,7 +54,7 @@
 
           <div class="item-card fadeIn">
             <a class="h-scale" href="{{ product.url }}">
-              <div class="img-box"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
+              <div class="img-box obj-fit"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
               <p class="cate">
                 {% for collection in product.collections %}
                   {% assign excluded_collections = 'all,tax' | split: ',' %}

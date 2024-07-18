@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "featured_collection": {
@@ -37,7 +46,7 @@
           "settings": {
             "image_banner_pc": "shopify:\/\/shop_images\/mv-banner01.jpg",
             "image_banner_sp": "shopify:\/\/shop_images\/mv-banner01_sp.jpg",
-            "link_banner": "shopify:\/\/collections"
+            "link_banner": "shopify:\/\/collections\/vegetables"
           }
         },
         "banner_top01_XHHpJR": {
@@ -45,7 +54,7 @@
           "settings": {
             "image_banner_pc": "shopify:\/\/shop_images\/mv-banner01.jpg",
             "image_banner_sp": "shopify:\/\/shop_images\/mv-banner01_sp.jpg",
-            "link_banner": "shopify:\/\/collections"
+            "link_banner": "shopify:\/\/collections\/vegetables"
           }
         },
         "banner_top01_qTEM34": {
@@ -53,30 +62,14 @@
           "settings": {
             "image_banner_pc": "shopify:\/\/shop_images\/mv-banner01.jpg",
             "image_banner_sp": "shopify:\/\/shop_images\/mv-banner01_sp.jpg",
-            "link_banner": "shopify:\/\/collections"
-          }
-        },
-        "banner_top02_xftagm": {
-          "type": "banner-top02",
-          "settings": {
-            "image_banner02": "shopify:\/\/shop_images\/top-banner01.jpg",
-            "link_banner02": "shopify:\/\/collections"
-          }
-        },
-        "banner_top02_eb8dee": {
-          "type": "banner-top02",
-          "settings": {
-            "image_banner02": "shopify:\/\/shop_images\/top-banner02.jpg",
-            "link_banner02": "shopify:\/\/collections"
+            "link_banner": "shopify:\/\/collections\/vegetables"
           }
         }
       },
       "block_order": [
         "banner_top01_mYhxbc",
         "banner_top01_XHHpJR",
-        "banner_top01_qTEM34",
-        "banner_top02_xftagm",
-        "banner_top02_eb8dee"
+        "banner_top01_qTEM34"
       ],
       "settings": {
       }

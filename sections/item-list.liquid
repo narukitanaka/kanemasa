@@ -1,3 +1,11 @@
+<style>
+  #itemList {
+    padding-top: 12rem;
+    margin-top: -12rem;
+  }
+</style>
+
+
 <div class="under-mv p-itemlist">
   <div class="img-box obj-fit">
     <picture>
@@ -14,11 +22,11 @@
 <section class="p-under p-itemlist_wrap01">
   <div class="inner">
     <div class="cate-list flex">
-      <a {% if request.path contains '/vegetables' %}class="active"{% endif %} href="/collections/vegetables/">野菜</a>
-      <a {% if request.path contains '/fruit' %}class="active"{% endif %} href="/collections/fruit/">果物</a>
-      <a {% if request.path contains '/other' %}class="active"{% endif %} href="/collections/other/">その他</a>
-      <a {% if request.path contains '/standard' %}class="active"{% endif %} href="/collections/standard/">定番商品</a>
-      <a {% if request.path contains '/seasonal' %}class="active"{% endif %} href="/collections/seasonal/">季節限定</a>
+      <a {% if request.path contains '/vegetables' %}class="active"{% endif %} href="/collections/vegetables#itemList">野菜</a>
+      <a {% if request.path contains '/fruit' %}class="active"{% endif %} href="/collections/fruit#itemList">果物</a>
+      <a {% if request.path contains '/other' %}class="active"{% endif %} href="/collections/other#itemList">その他</a>
+      <a {% if request.path contains '/standard' %}class="active"{% endif %} href="/collections/standard#itemList">定番商品</a>
+      <a {% if request.path contains '/seasonal' %}class="active"{% endif %} href="/collections/seasonal#itemList">季節限定</a>
     </div>
   </div><!-- /.inner -->
 </section><!-- /.p-company_wrap01 -->
@@ -44,7 +52,7 @@
       <span class="arrow"></span>
     </div><!-- /.sort -->
 
-    <div class="item-list flex">
+    <div id="itemList" class="item-list flex">
 
       {% assign has_products = false %}
 

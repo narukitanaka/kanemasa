@@ -53,10 +53,11 @@
           </p>
         {% endif %}
 
-        <p class="body-txt">
+        <div class="body-txt">
           <span>【商品説明】</span><br>
-          {{ product.content | strip_html | newline_to_br }}
-        </p>
+          {{ product.content }}
+        </div>
+        
         <div class="item-count">
           <form method="post" action="/cart/add" id="AddToCartForm">
             <input
